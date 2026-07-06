@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Home Section</title>
+    <style>
+        /* Base Resets & Variables */
+        :root {
+            --primary-color: #ff3e3e; /* Intense Red accent */
+            --dark-bg: #111111;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        /* Home / Hero Section */
+        .home-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            /* High-quality gym background image with a dark overlay for text readability */
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1470&auto=format&fit=crop') no-repeat center center/cover;
+        }
+
+        .home-content {
+            max-width: 800px;
+        }
+
+        .home-content h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .home-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .home-content p {
+            font-size: 1.25rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Call To Action Button */
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 40px;
+            font-size: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 62, 62, 0.4);
+        }
+
+     
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .home-content h1 {
+                font-size: 2.5rem;
+            }
+            .home-content p {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            .cta-btn {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Section Start -->
+    <section class="home-section">
+        <div class="home-content">
+            <h1>No Excuses.<br>Just <span>Results.</span></h1>
+            <p>Push your limits, break your boundaries, and shape your ultimate physique with elite coaches and premium iron gear.</p>
+          
+        </div>
+    </section>
+     <section class="home-section">
+        <div class="home-content">
+            <h1>You Are <br>Born To <span>Win.</span></h1>
+            <p>Are you want to win. then make to you perfect And gain Confident. to Start gym & Eat Healthy </p>
+          
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+</body>
+</html>

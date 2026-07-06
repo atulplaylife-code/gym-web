@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Services Section</title>
+    <style>
+        /* Base Resets & Theme Variables */
+        :root {
+            --primary-color: #ff3e3e; /* Intense Red accent */
+            --dark-bg: #111111;
+            --card-bg: #1a1a1a;
+            --text-light: #ffffff;
+            --text-gray: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        /* Services Section Container */
+        .services-section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        /* Section Header Styling */
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 span {
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive CSS Grid Layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Individual Service Card Styling */
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 45px 30px;
+            border-radius: 8px;
+            border: 1px solid #252525;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effects */
+        .service-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Icon Placeholder/Styling */
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Breakpoints for Mobile Tablets */
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 60px 5%;
+            }
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Services Section Start -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <h2>Our <span>Services</span></h2>
+            <p>We provide world-class amenities and training ecosystems designed to help you crush your physical goals.</p>
+        </div>
+
+        <div class="services-grid">
+            
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon">🏋️‍♂️</div>
+                <h3>Elite  Weights</h3>
+                <p>we give training to lift more weight & And perform Better.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon">🏃‍♂️</div>
+                <h3>Cardio Zone</h3>
+                <p>High-end interactive treadmills, ellipticals, stairmasters, and rowing machines designed to scale up your endurance and burn calories.</p>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="service-icon">🥗</div>
+                <h3>Nutrition Planning</h3>
+                <p>Receive personalized macronutrient guides, structural diet maps, and supplementation support completely aligned with your gym goals.</p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="service-icon">🧘‍♀️</div>
+                <h3>Flexibility & Recovery</h3>
+                <p>Access our specialized mobility spaces, dynamic stretching routines, and deep tissue recovery tools to keep your muscles firing perfectly.</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+</body>
+</html>

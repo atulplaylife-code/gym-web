@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Iron Pulse Gym</title>
+    <style>
+        /* Base Resets & Theme Variables */
+        :root {
+            --primary-color: #ff3e3e;
+            --bg-dark: #111111;
+            --bg-card: #1a1a1a;
+            --text-light: #ffffff;
+            --text-gray: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 10%;
+        }
+
+        /* About Section Layout */
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Left Side: Image Presentation */
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: block;
+        }
+
+        /* Decorative border accent behind the image */
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-color);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        /* Right Side: Content Text */
+        .about-content {
+            flex: 1;
+        }
+
+        .tagline {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: var(--primary-color);
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* Core Values / Stats Grid */
+        .gym-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stat-item h3 {
+            font-size: 1.6rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .about-image::before {
+                display: none; /* Hide accent border on smaller screens for cleaner alignment */
+            }
+
+            .stat-item {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="about-section">
+        
+        <!-- Left Side Picture Component -->
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Gym Training Session">
+        </div>
+
+        <!-- Right Side Text Narrative Component -->
+        <div class="about-content">
+            <span class="tagline">Who We Are</span>
+            <h2>We Build <span>Champions</span>, Not Just Bodies</h2>
+            <p>We provide Details About Gym to You.How to practic & live Healthy. our Goals to make everybudy to healthy and fit.
+              You are providing more details about gym and upgrate to your body. please you not lose your hope to became to fit.
+            </p>
+            
+            <p>Whether your goal is gaining functional muscle, melting away fat, or conditioning for high-level athletics, our purpose-driven culture keeps you motivated from the moment you step past the front desk.</p>
+
+            <!-- Quick Overview Highlights -->
+            <div class="gym-stats">
+                <div class="stat-item">
+                    <h3>Ability</h3>
+                    <p>We give to Eligibility to wake up with yours Confident</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Best Coaches</h3>
+                    <p>Certified experts specializing in sports rehab, powerlifting, and body composition transformation.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>

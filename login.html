@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Login & Signup</title>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #111, #222);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 400px;
+      background: #1c1c1c;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 15px;
+      background: #2a2a2a;
+      color: #fff;
+    }
+
+    .form-group input:focus {
+      border: 2px solid #00bcd4;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #00bcd4;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0097a7;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle a {
+      color: #00bcd4;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .error {
+      color: #f44336;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Login Form -->
+    <form id="loginForm">
+      <h2>Gym Login</h2>
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        <div class="error" id="loginEmailError"></div>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        <div class="error" id="loginPasswordError"></div>
+      </div>
+      <button type="submit">Login</button>
+      <div class="toggle">
+        <p>Don't have an account? <a id="showSignup">Sign Up</a></p>
+      </div>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm" class="hidden">
+      <h2>Gym Signup</h2>
+      <div class="form-group">
+        <label for="signupName">Full Name</label>
+        <input type="text" id="signupName" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        <div class="error" id="signupEmailError"></div>
+      </div>
+      <div class="form-group">
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" placeholder="Create a password" required>
+        <div class="error" id="signupPasswordError"></div>
+      </div>
+      <button type="submit">Sign Up</button>
+      <div class="toggle">
+        <p>Already have an account? <a id="showLogin">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const showSignup = document.getElementById('showSignup');
+    const showLogin = document.getElementById('showLogin');
+
+    showSignup.addEventListener('click', () => {
+      loginForm.classList.add('hidden');
+      signupForm.classList.remove('hidden');
+    });
+
+    showLogin.addEventListener('click', () => {
+      signupForm.classList.add('hidden');
+      loginForm.classList.remove('hidden');
+    });
+
+    // Simple validation
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let email = document.getElementById('loginEmail').value;
+      let password = document.getElementById('loginPassword').value;
+      let emailError = document.getElementById('loginEmailError');
+      let passwordError = document.getElementById('loginPasswordError');
+
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      if (!email.includes("@")) {
+        emailError.textContent = "Please enter a valid email.";
+        return;
+      }
+      if (password.length < 4) {
+        passwordError.textContent = "Password must be at least 4 characters.";
+        return;
+      }
+      alert("✅ Logged in successfully!");
+      loginForm.reset();
+    });
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let email = document.getElementById('signupEmail').value;
+      let password = document.getElementById('signupPassword').value;
+      let emailError = document.getElementById('signupEmailError');
+      let passwordError = document.getElementById('signupPasswordError');
+
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      if (!email.includes("@")) {
+        emailError.textContent = "Please enter a valid email.";
+        return;
+      }
+      if (password.length < 6) {
+        passwordError.textContent = "Password must be at least 6 characters.";
+        return;
+      }
+      alert("🎉 Signup successful!");
+      signupForm.reset();
+    });
+  </script>
+
+</body>
+</html>
